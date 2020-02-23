@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+    html, body{
+      margin: 0;         /* 余白の削除 */
+      padding: 0;        /* 余白の削除 */
+      width:100%;
+      height:100%;
+    }
+    /* ヘッダーの固定 */
+    div#header-fixed
+    {
+      position: fixed;            /* ヘッダーの固定 */
+      top: 0px;                   /* 位置(上0px) */
+      left: 0px;                  /* 位置(右0px) */
+      width: 100%;                /* 横幅100%　*/
+      height: 140px;              /* 縦幅140px */
+    }
+
+
+    div#header-bk {
+      background-color:#444;     /* 背景色(黒) */
+      padding:10px 0 20px;       /* 上10px、下20pxをあける */
+      height:110px;              /* 縦の高さ110px */
+      width:100%;                /* 横の幅を100% */
+    }
+
+
+    div#header {
+      border: 5px solid #fff;    /* 表示領域を白枠で囲う */
+      height: 100%;              /* 縦の表示領域はheader-bkと同じ */
+      width: 960px;              /* 横の幅970px */
+      margin: auto;
+      /* 中央揃え */
+    }
+    .a{
+      height:1000px;
+      background-color:red;
+    }
+  </style>
+</head>
+<body>
+  <div id="header-fixed">
+    <div id="header-bk">
+      <div id="header">・・・</div>
+    </div>
+  </div>
+  <div id="body-bk">
+    <div id="body">・・・</div>
+  </div>
+  <div class="a">
+    a
+  </div>
+  <div id="footer-fixed">
+    <div id="footer-bk">
+      <div id="footer">・・・</div>
+    </div>
+  </div>
+
+</body>
+</html>

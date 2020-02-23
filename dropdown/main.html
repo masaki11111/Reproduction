@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./main.css">
+  <title>プルダウン（スライド）サンプル</title>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <!-- <div id="menu_1"> -->
+  <!-- <div id="menu_2"> -->
+  <div class="menu">
+    <div class="title">
+      <div class="title_1">
+        Skypeで事前コンサル
+      </div>
+      <div class="switch">
+        <span class="fas fa-chevron-up"></span>
+      </div>
+
+    </div>
+  <div class="tex">
+    <div class="tex_1">
+      現在のスキルの状況、パソコンの環境説明、渡航での注意点を話します。
+    </div>
+    <div class="tex_2">
+      簡単なテストあり
+    </div>
+    <div class="tex_3">
+      iSaraでは受講料を稼げることを保障しています。従って、事前コンサル時点で簡単なテストを実施し、場合によってはお断りをしております。（テストの内容はPCの基礎知識に関するテストですので、普段からパソコンを利用する方でしたら問題ありません。テストはもちろん無料ですので、まずはお問い合わせください。）
+    </div>
+  </div>
+</div>
+
+
+  <script type="text/javascript">
+
+    //.next()は直後の兄弟要素
+    // $(function(){
+    //   $("#menu_1").on("click", function(){
+    //     $("#menu_1 > .tex").not(":animated").slideToggle();
+    //     // $(this).children().not(":animated").css('border': '4px solid blue');
+    //     $("#menu_1 > .title").toggleClass("border");
+    //
+    //   });
+    //   $("#menu_2").on("click", function(){
+    //     $("#menu_2 > .tex").not(":animated").slideToggle();
+    //     // $(this).children().not(":animated").css('border': '4px solid blue');
+    //     $("#menu_2 > .title").toggleClass("border");
+    //
+    //   });
+    // });
+    // $(function(){
+    //   $("#menu").on("click", function(){
+    //     $(".tex").not(":animated").slideToggle();
+    //     // $(this).children().not(":animated").css('border': '4px solid blue');
+    //
+    //   });
+    // });
+    //
+    $(".switch").on("click",function(){
+// $(this).next().slideToggle();
+$(this).children().toggleClass("fas fa-chevron-up");
+$(this).children().toggleClass("fas fa-chevron-down");
+})
+
+    var parent = $('.menu');
+    parent.each(function(index,element){
+      console.log(index + ':' + $(element).text());
+    	var self = $(this);
+    	self.on('click',function(){
+    		parent.not(self).children('.tex').slideUp(300);
+    		parent.not(self).find('.title_1').removeClass("border");
+    		self.children('.tex').slideToggle(300);
+    		self.find('.title_1').addClass("border");
+
+    	});
+    });
+
+
+  </script>
+</body>
+</html>
